@@ -1,0 +1,307 @@
+*, ::before, :after {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+  padding:0;
+  margin:0;
+  font-family: Helvetica,Arial,sans-serif;
+  background-color: #373737;
+}
+
+#menu {
+  overflow: hidden;
+}
+#menu>* {
+  display: block;
+  overflow: hidden;
+}
+.menu-item {
+  width:25%;
+  height:100%;
+  display:block;
+  position: absolute;
+  float:left;
+  -webkit-transform: translateY(-100%);
+	transform: translateY(-100%);
+	transition: transform 300ms linear;
+  will-change: transform;
+  pointer-events: auto;  
+}
+
+.menu-item.active {
+  -webkit-transform: translateY(0%);
+	transform: translateY(0%);
+	transition: transform 300ms linear;
+}
+
+h1 {
+  font-size: 2.9vw;
+  color:#ffffff;
+  top: 15%;
+  width: 260px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-left: -130px;
+  left: 50%;
+    z-index:100;
+}
+.menu-item p {
+  opacity: 0;
+  text-align: center;
+  margin-left: -130px;
+  left: 50%;
+  z-index:100;
+  top: 30%;
+  width: 280px;
+  color:#ffffff;
+  -webkit-transition: opacity 0.5s, height 0.4s;
+  -moz-transition: opacity 0.5s, height 0.4s;
+  transition: opacity 0.5s, height 0.4s;
+}
+
+.menu-item.menu-expanded p {
+    opacity: 1;
+}
+
+.menu-item>* {
+  position: absolute;
+  will-change: transform;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-horizontal .menu-item {
+    width:100%;
+    float: none;
+    position:relative;
+    height: 250px;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+	  transition: transform 300ms linear;
+  }
+
+  .menu-horizontal .menu-item.active {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    transition: transform 300ms linear;
+  }
+}
+
+.menu-item:after {
+    content: '';
+    position: absolute;
+    opacity:0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: url("https://codyhouse.co/demo/expandable-project-presentation/img/img-1-small.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    -webkit-transition: opacity 0.5s, height 0.4s;
+    -moz-transition: opacity 0.5s, height 0.4s;
+    transition: opacity 0.5s, height 0.4s;
+}
+
+.menu-item.menu-expanded:after {
+  opacity:1;
+  -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+/* -------------------------------- 
+
+Menu trigger
+
+-------------------------------- */
+h2 {
+  color:#fff;
+  position: absolute;
+  left: 60%;
+  top: 50px;
+   -ms-transform: rotate(198deg);
+    -webkit-transform: rotate(198deg);
+    transform: rotate(198deg);
+
+}
+
+.arrow-container {
+    height: 100px;
+    width: 340px;
+    position: absolute;
+    -ms-transform: rotate(162deg);
+    -webkit-transform: rotate(162deg);
+    transform: rotate(162deg);
+    right: 7%;
+    top: 113px;
+}
+.arrow {
+     background: url(http://www.ats2go.com/wp-content/themes/ats2go2015/img/arrow.png) no-repeat;
+    width: 100%;
+    height: 100%;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.cd-nav-trigger {
+  position: absolute;
+  z-index: 9999;
+  top: 24px;
+  right: 5%;
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transition: background 0.2s;
+  -moz-transition: background 0.2s;
+  transition: background 0.2s;
+}
+.cd-nav-trigger .cd-icon,
+.cd-nav-trigger .cd-icon::before,
+.cd-nav-trigger .cd-icon::after {
+  /* menu icon created in CSS */
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 2px;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.no-touch .cd-nav-trigger:hover {
+  background-color: black;
+}
+.cd-nav-trigger .cd-icon {
+  /* middle line of the menu icon */
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-transition: -webkit-transform 0.3s, background-color 0.3s;
+  -moz-transition: -moz-transform 0.3s, background-color 0.3s;
+  transition: transform 0.3s, background-color 0.3s;
+}
+.cd-nav-trigger .cd-icon::before, .cd-nav-trigger .cd-icon::after {
+  /* upper and lower lines of the menu icon */
+  content: '';
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s;
+}
+.cd-nav-trigger .cd-icon::before {
+  -webkit-transform: translateY(-6px);
+  -moz-transform: translateY(-6px);
+  -ms-transform: translateY(-6px);
+  -o-transform: translateY(-6px);
+  transform: translateY(-6px);
+}
+.cd-nav-trigger .cd-icon::after {
+  -webkit-transform: translateY(6px);
+  -moz-transform: translateY(6px);
+  -ms-transform: translateY(6px);
+  -o-transform: translateY(6px);
+  transform: translateY(6px);
+}
+.cd-nav-trigger.project-open .cd-icon {
+  /* user selects a projects - transform the icon into a 'X' */
+  background-color: rgba(255, 255, 255, 0);
+}
+.cd-nav-trigger.project-open .cd-icon::before, .cd-nav-trigger.project-open .cd-icon::after {
+  background-color: white;
+}
+.cd-nav-trigger.project-open .cd-icon::before {
+  -webkit-transform: translateY(0) rotate(45deg);
+  -moz-transform: translateY(0) rotate(45deg);
+  -ms-transform: translateY(0) rotate(45deg);
+  -o-transform: translateY(0) rotate(45deg);
+  transform: translateY(0) rotate(45deg);
+}
+.cd-nav-trigger.project-open .cd-icon::after {
+  -webkit-transform: translateY(0) rotate(-45deg);
+  -moz-transform: translateY(0) rotate(-45deg);
+  -ms-transform: translateY(0) rotate(-45deg);
+  -o-transform: translateY(0) rotate(-45deg);
+  transform: translateY(0) rotate(-45deg);
+}
+.cd-nav-trigger.nav-visible .cd-icon {
+  /* user opens the navigation - transform the icon into an arrow */
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  -o-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+.cd-nav-trigger.nav-visible .cd-icon::after {
+  -webkit-transform: translateX(5px) translateY(3px) rotate(-45deg) scaleX(0.5);
+  -moz-transform: translateX(5px) translateY(3px) rotate(-45deg) scaleX(0.5);
+  -ms-transform: translateX(5px) translateY(3px) rotate(-45deg) scaleX(0.5);
+  -o-transform: translateX(5px) translateY(3px) rotate(-45deg) scaleX(0.5);
+  transform: translateX(5px) translateY(3px) rotate(-45deg) scaleX(0.5);
+}
+.cd-nav-trigger.nav-visible .cd-icon::before {
+  -webkit-transform: translateX(5px) translateY(-3px) rotate(45deg) scaleX(0.5);
+  -moz-transform: translateX(5px) translateY(-3px) rotate(45deg) scaleX(0.5);
+  -ms-transform: translateX(5px) translateY(-3px) rotate(45deg) scaleX(0.5);
+  -o-transform: translateX(5px) translateY(-3px) rotate(45deg) scaleX(0.5);
+  transform: translateX(5px) translateY(-3px) rotate(45deg) scaleX(0.5);
+}
+@media only screen and (min-width: 1024px) {
+  .cd-nav-trigger.nav-visible .cd-icon {
+    -webkit-transform: translateY(-50%) translateX(-50%) rotate(-90deg);
+    -moz-transform: translateY(-50%) translateX(-50%) rotate(-90deg);
+    -ms-transform: translateY(-50%) translateX(-50%) rotate(-90deg);
+    -o-transform: translateY(-50%) translateX(-50%) rotate(-90deg);
+    transform: translateY(-50%) translateX(-50%) rotate(-90deg);
+  }
+  .cd-nav-trigger.nav-visible .cd-icon::after {
+    -webkit-transform: translateX(-5px) translateY(3px) rotate(45deg) scaleX(0.5);
+    -moz-transform: translateX(-5px) translateY(3px) rotate(45deg) scaleX(0.5);
+    -ms-transform: translateX(-5px) translateY(3px) rotate(45deg) scaleX(0.5);
+    -o-transform: translateX(-5px) translateY(3px) rotate(45deg) scaleX(0.5);
+    transform: translateX(-5px) translateY(3px) rotate(45deg) scaleX(0.5);
+  }
+  .cd-nav-trigger.nav-visible .cd-icon::before {
+    -webkit-transform: translateX(-5px) translateY(-3px) rotate(-45deg) scaleX(0.5);
+    -moz-transform: translateX(-5px) translateY(-3px) rotate(-45deg) scaleX(0.5);
+    -ms-transform: translateX(-5px) translateY(-3px) rotate(-45deg) scaleX(0.5);
+    -o-transform: translateX(-5px) translateY(-3px) rotate(-45deg) scaleX(0.5);
+    transform: translateX(-5px) translateY(-3px) rotate(-45deg) scaleX(0.5);
+  }
+}
+
+
+.d-blue {background-color:#00a0e6;}
+.red {background-color:#f2b635;}
+.blue {background-color:#f19a2a;}
+.green {background-color:#00caff;}
+.yellow {background-color:#f25648;}
+
+.d-blue button:hover {color:#00a0e6;}
+.red button:hover{color:#f2b635;}
+.blue button:hover{color:#f19a2a;}
+.green button:hover{color:#00caff;}
+.yellow button:hover{color:#f25648;}
