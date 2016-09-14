@@ -4,6 +4,7 @@ A quick jQuery menu with expanding panels with elements and inspiration from htt
 # Install 
 
 Just add the script file to the head of your html file and use the following markup
+
 ```html
 <script src="js/jquey.menu.js"><script>
 
@@ -20,7 +21,9 @@ Just add the script file to the head of your html file and use the following mar
   </div>
 </div>
 ```
+
 Then call the plugin on the container of the menu
+
 ```js
   $('#menu').menu();
 ```
