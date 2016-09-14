@@ -21,9 +21,9 @@ Just add the script file to the head of your html file and use the following mar
 </div>
 ```
 Then call the plugin on the container of the menu
-'''
+```
   $('#menu').menu();
-'''
+```
 
 
 # Demo 
