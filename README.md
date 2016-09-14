@@ -1,7 +1,7 @@
 # Expandy Menu
 A quick jQuery menu with expanding panels with elements and inspiration from https://github.com/jmar777/kwicks
 
-# Install 
+## Install 
 
 Just add the script file to the head of your html file and use the following markup
 
@@ -29,7 +29,7 @@ Then call the plugin on the container of the menu
 ```
 
 
-# Demo 
+## Demo 
 [Here](http://codepen.io/Chilledson/pen/gwPZPm) is a link to a demo 
 
 
