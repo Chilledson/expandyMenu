@@ -6,7 +6,7 @@ A quick jQuery menu with expanding panels with elements and inspiration from htt
 Just add the script file to the head of your html file and use the following markup
 
 ```html
-<script src="js/jquey.menu.js"><script>
+<script src="js/jquey.menu.js"></script>
 
 <div id="menu" class="menu-container">
   <div id="item-1" class="menu-item red">
