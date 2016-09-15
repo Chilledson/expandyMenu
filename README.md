@@ -30,6 +30,6 @@ Then call the plugin on the container of the menu
 
 
 ## Demo 
-[Here](http://codepen.io/Chilledson/pen/gwPZPm) is a link to a demo 
+[Here](http://codepen.io/Chilledson/full/gwPZPm) is a link to a demo 
 
 
