@@ -5,7 +5,7 @@
  */
 (function($) {
   
-  jQuery.fn.Menu = function(options) {
+  jQuery.fn.menu = function(options) {
     var defaults = {
       button: $('#toggle'),
       duration: 500,
